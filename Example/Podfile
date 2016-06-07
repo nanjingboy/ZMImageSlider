@@ -1,0 +1,3 @@
+target 'Example' do
+  pod 'ZMImageSlider', :path => '../'
+end
