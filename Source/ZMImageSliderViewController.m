@@ -41,7 +41,7 @@
 
 - (void)setImageSliderViewConstraints {
     NSArray *imageSliderViewHConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[imageSliderView]-0-|"
-                                                                                options:nil
+                                                                                options:0
                                                                                 metrics:nil
                                                                                   views:@{@"imageSliderView": self.imageSliderView}];
 
@@ -50,7 +50,7 @@
 
 
     NSArray *imageSliderViewVConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[imageSliderView]-0-|"
-                                                                                options:nil
+                                                                                options:0
                                                                                 metrics:nil
                                                                                   views:@{@"imageSliderView": self.imageSliderView}];
 
@@ -69,7 +69,7 @@
     [self.view addConstraint:conatraint];
 
     NSArray *displayLabelVConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[label]-20-|"
-                                                                                options:nil
+                                                                                options:0
                                                                                 metrics:nil
                                                                                   views:@{@"label": self.displayLabel}];
 
@@ -81,7 +81,7 @@
 }
 
 - (void)imageSliderViewImageSwitch:(NSInteger)index count:(NSInteger)count imageUrl:(NSString *)imageUrl {
-    self.displayLabel.text = [[NSString alloc] initWithFormat:@"%ld／%ld", index + 1, count];
+    self.displayLabel.text = [[NSString alloc] initWithFormat:@"%td／%td", index + 1, count];
 }
 
 @end
