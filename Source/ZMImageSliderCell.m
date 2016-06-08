@@ -82,24 +82,13 @@
 - (void)drawImage {
     CGRect scrollViewFrame = self.scrollView.frame;
     if (self.imageView.image) {
-        CGFloat ratio;
         CGSize imageSize = self.imageView.image.size;
-        CGRect imageFrame = CGRectMake(0.0f, 0.0f, imageSize.width, imageSize.height);
-        if (scrollViewFrame.size.width <= scrollViewFrame.size.height) {
-            ratio = scrollViewFrame.size.width / imageFrame.size.width;
-            imageFrame.size.width = scrollViewFrame.size.width;
-            imageFrame.size.height = imageFrame.size.height * ratio;
-        } else {
-            ratio = scrollViewFrame.size.height / imageFrame.size.height;
-            imageFrame.size.width = imageFrame.size.width * ratio;
-            imageFrame.size.height = scrollViewFrame.size.height;
-        }
-        self.imageView.frame = imageFrame;
+        CGFloat ratio = scrollViewFrame.size.width / imageSize.width;
+        self.imageView.frame = CGRectMake(0.0f, 0.0f, scrollViewFrame.size.width, imageSize.height * ratio);
         self.scrollView.contentSize = self.imageView.frame.size;
         self.imageView.center = [self centerOfScrollView:self.scrollView];
         self.scrollView.minimumZoomScale = 1.0f;
-        self.scrollView.maximumZoomScale = MAX(scrollViewFrame.size.width / imageFrame.size.width,
-                                          scrollViewFrame.size.height / imageFrame.size.height);
+        self.scrollView.maximumZoomScale = scrollViewFrame.size.height / self.imageView.frame.size.height;
         self.scrollView.zoomScale = 1.0f;
     } else {
         scrollViewFrame.origin = CGPointZero;
