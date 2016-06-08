@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZMImageSlider'
-  s.version          = '0.1.0'
+  s.version          = '0.1.3'
   s.summary          = 'A simple image slide show library by Objective-C.'
   s.homepage         = 'https://github.com/nanjingboy/ZMImageSlider'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

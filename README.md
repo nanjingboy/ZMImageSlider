@@ -13,7 +13,7 @@ This is a clone version from [SwiftImageSlider](https://github.com/nanjingboy/Sw
 
 ```ruby
 platform :ios, '7.0'
-pod 'ZMImageSlider', '~> 0.1.0'
+pod 'ZMImageSlider', '~> 0.1.3'
 ```
 
 #### [Example](Example/Example/ViewController.m)
